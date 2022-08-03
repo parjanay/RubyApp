@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+Features of the application:
+> Mandatory title and description with minimum lenght of 6 characters
+> 

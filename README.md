@@ -25,3 +25,6 @@ Things you may want to cover:
 Features of the application:
 > Mandatory title and description with minimum lenght of 6 characters
 > 
+BUGS that are coming:
+> Delete feature is not working in index window
+> 

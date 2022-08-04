@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
+<center>
+<h1> Alpha Bloggers </h1>
 
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<table border="2">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Created At </th>
+            </th> Updated At </th>
+            <th colspan="3">Actions</th>
+        </tr>
+    </thead>
+    <tbody> 
+        <% @users.each do |user| %>
+        <tr>
+            <td> <%= link_to user.name, user%> </td>
+            <td> <%=link_to gravatar_for(user,size:100), user%> </td>
+            <td> <%= pluralize(user.articles.count, "article")%> </td>
+            <td> Joined at <%= user.created_at%></td>
+            <td> <%= link_to 'Show Profile', user %> </td>
+            <td> <%= link_to 'Edit Profile', edit_user_path(user) %> </td>
+        </tr>
+        <%end%>
+    </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New User', new_user_path %>
+<%=link_to 'Home Page', root_path %> |
+<%=link_to 'Signup Today!', signup_path %> |
+<%=link_to 'Article Listing', articles_path %> 
+</center>

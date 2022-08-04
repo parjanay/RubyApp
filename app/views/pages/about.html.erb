@@ -9,5 +9,10 @@ Everyone has the right to freedom of opinion and expression; this right includes
 <%=link_to 'Articles Listing', articles_path %> |
 <%=link_to 'Home Page', root_path %> |
 <%=link_to 'Signup Today!', signup_path %> |
-<%=link_to 'Users Listing', users_path %> 
+<%=link_to 'Users Listing', users_path %> |
+<% if logged_in? %>
+    <%=link_to 'LOGOUT NOW', root_path, method: :delete %> | 
+<%else%>
+     <%=link_to 'LOGIN NOW', login_path%> |
+<%end%>
 </center>

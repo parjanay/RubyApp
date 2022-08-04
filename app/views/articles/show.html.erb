@@ -7,5 +7,10 @@ by <%= @article.user.name if @article.user %> <br/>
 <p><strong>Description:</strong> <%= @article.description%> </p>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%=link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure you want to delete this article?"} %> |
-<%=link_to 'Return to articles Listing', articles_path %>
+<%=link_to 'Return to articles Listing', articles_path %> |
+<% if logged_in? %>
+    <%=link_to 'LOGOUT NOW', root_path, method: :delete %> | 
+<%else%>
+     <%=link_to 'LOGIN NOW', login_path%> |
+<%end%>
 <center>

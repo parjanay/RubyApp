@@ -1,3 +1,4 @@
+<% #byebug %>
 <center><H1> Welcome to the HomePage </H1></center>
 
 <div class = "container" id = "home-container">
@@ -12,5 +13,10 @@
 <%=link_to 'Articles Listing', articles_path %> |
 <%=link_to 'About Page', about_path %> |
 <%=link_to 'Signup Today!', signup_path %> | 
-<%=link_to 'Users Listing', users_path %> 
+<%=link_to 'Users Listing', users_path %> |
+<% if logged_in? %>
+    <%=link_to 'LOGOUT NOW', root_path, method: :delete %> | 
+<%else%>
+     <%=link_to 'LOGIN NOW', login_path%> |
+<%end%>
 </center>

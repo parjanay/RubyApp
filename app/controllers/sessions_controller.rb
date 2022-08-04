@@ -3,9 +3,10 @@ class SessionsController < ApplicationController
 
     end
     def create
-        p params[:sessions][:email]
-        user = User.find_by( email: params[:sessions][:email])
-        if user && user.authenticate(params[:sessions][:password])
+
+        user = User.find_by(email: params[:session][:email])
+        if user && user.authenticate(params[:session][:password])
+            session[:user_id] = user.id
             flash[:notice] ="Logged in Sucessfully!!"
             redirect_to user
         else
@@ -16,7 +17,9 @@ class SessionsController < ApplicationController
 
     end
     def destroy
-
+        session[:user_id] = nil
+        flash[:notice] = "Logged out"
+        redirect_to root_path
     end
 
 end

@@ -29,5 +29,11 @@
 
 <%=link_to 'Home Page', root_path %> |
 <%=link_to 'Signup Today!', signup_path %> |
-<%=link_to 'Article Listing', articles_path %> 
+<%=link_to 'Article Listing', articles_path %> |
+<%=link_to 'LOGIN NOW', login_path %> |
+<% if logged_in? %>
+    <%=link_to 'LOGOUT NOW', root_path, method: :delete %> | 
+<%else%>
+     <%=link_to 'LOGIN NOW', login_path%> |
+<%end%>
 </center>

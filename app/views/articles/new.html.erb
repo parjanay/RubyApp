@@ -3,5 +3,10 @@
 <%=render 'form' %>
 
 <%=link_to 'Return to articles Listing', articles_path %> |
-<%=link_to 'Home Page', root_path %>
+<%=link_to 'Home Page', root_path %> |
+<% if logged_in? %>
+    <%=link_to 'LOGOUT NOW', root_path, method: :delete %> | 
+<%else%>
+     <%=link_to 'LOGIN NOW', login_path%> |
+<%end%>
 <center>

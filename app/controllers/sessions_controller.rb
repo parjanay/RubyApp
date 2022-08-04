@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:session][:password])
             session[:user_id] = user.id
             flash[:notice] ="Logged in Sucessfully!!"
+            byebug
             redirect_to user
         else
             flash.now[:alert] = "Wrong Login Details"

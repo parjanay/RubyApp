@@ -6,7 +6,8 @@
     <h3>Articles:<h3>
     <%= render 'articles/article' %>
 
-    <%=link_to 'Return to articles Listing', articles_path %> |
+    <%=link_to 'Articles Listing', articles_path %> |
+    <%=link_to 'Create new Article', new_article_path%> |
     <%=link_to 'Home Page', root_path %>|
     <% if logged_in? %>
         <%=link_to 'LOGOUT NOW', root_path, method: :delete %> | 

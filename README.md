@@ -12,7 +12,7 @@ Features of the application:
 > Secure password authentication for users
 > Edit users
 > Show profile picture of users
-> Login Page for loggin in users
+> Login Page for logging in users
 
 
 
@@ -20,3 +20,4 @@ BUGS that are coming:
 > Delete feature is not working in index window
 > Bootstrap is not working
 > Logout is not working
+> Whenever new post is created, it is done by first user only
